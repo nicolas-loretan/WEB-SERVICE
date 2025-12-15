@@ -16,3 +16,11 @@ const io = new Server(server, {
 
 // Servir les fichiers statiques
 app.use(express.static(path.join(__dirname, "public")));
+
+
+
+// Démarrage du serveur HTTP avec socket.io branché dessus
+const PORT = process.env.PORT || 10000;
+server.listen(PORT, () => {
+  console.log(`🚀 Serveur lancé sur le port ${PORT}`);
+});
